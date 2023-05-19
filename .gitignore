@@ -3,6 +3,4 @@ data/
 .vscode
 
 # Databases
-data-db/
-metabase-app-db/
-pgadmin-db/
+databases/
