@@ -41,8 +41,11 @@ services:
 
   pgadmin-app:
     image: dpage/pgadmin4:latest
+    restart: always
     environment:
       - PGADMIN_DEFAULT_EMAIL=admin@metabase.com
       - PGADMIN_DEFAULT_PASSWORD=admin
     ports:
       - "5050:80"
+    volumes:
+      - ./pgadmin-db:/var/lib/pgadmin

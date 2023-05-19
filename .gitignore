@@ -2,6 +2,7 @@
 data/
 .vscode
 
-# Spun up databases
+# Databases
 data-db/
 metabase-app-db/
+pgadmin-db/
