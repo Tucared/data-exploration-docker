@@ -1,0 +1,7 @@
+# User data
+data/
+.vscode
+
+# Spun up databases
+data-db/
+metabase-app-db/
