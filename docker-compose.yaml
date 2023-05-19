@@ -1,14 +1,14 @@
 version: '3'
 
 services:
-  data-db:
+  source-data-db:
     image: postgres:latest
     environment:
-      - POSTGRES_DB=data
-      - POSTGRES_USER=data_user
-      - POSTGRES_PASSWORD=data_password
+      - POSTGRES_DB=source-data-db
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
     volumes:
-      - ./databases/data-db:/var/lib/postgresql/data
+      - ./databases/source-data-db:/var/lib/postgresql/data
 
   metabase-app-db:
     image: postgres:latest
@@ -16,9 +16,9 @@ services:
     ports:
       - 5432:5432
     environment:
-      - POSTGRES_DB=metabase
-      - POSTGRES_USER=metabase_user
-      - POSTGRES_PASSWORD=metabase_password
+      - POSTGRES_DB=metabase-app-db
+      - POSTGRES_USER=metabase
+      - POSTGRES_PASSWORD=password
     volumes:
       - ./databases/metabase-app-db:/var/lib/postgresql/data
 
@@ -27,10 +27,10 @@ services:
     restart: always
     environment:
       - MB_DB_TYPE=postgres
-      - MB_DB_DBNAME=metabase
+      - MB_DB_DBNAME=metabase-app-db
       - MB_DB_PORT=5432
-      - MB_DB_USER=metabase_user
-      - MB_DB_PASS=metabase_password
+      - MB_DB_USER=metabase
+      - MB_DB_PASS=password
       - MB_DB_HOST=metabase-app-db
     depends_on:
       - metabase-app-db
@@ -43,7 +43,7 @@ services:
     image: dpage/pgadmin4:latest
     restart: always
     environment:
-      - PGADMIN_DEFAULT_EMAIL=admin@metabase.com
+      - PGADMIN_DEFAULT_EMAIL=admin@pgadmin.com
       - PGADMIN_DEFAULT_PASSWORD=admin
     ports:
       - "5050:80"

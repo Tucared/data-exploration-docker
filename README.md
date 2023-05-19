@@ -20,18 +20,20 @@ This repository is intended for a quick launch of a lightweight dockerised data 
 2. Launch the workspace for the first time
     ```shell
     make run
+    # [...]
+    #
     # pdAdmin accessible on http://localhost:5050/
     # Metabase accessible on http://localhost:3000/
     ````
 
-3. Connect to pgAdmin using **admin@metabase.com** as username and **admin** as password ; then click on **Add New Server** to connect to your source database:
+3. Connect to pgAdmin using **admin@pgadmin.com** as username and **admin** as password ; then click on **Add New Server** to connect to your source database:
    1. General
-      1. Name: **data** (can be anything)
+      1. Name: **source-data-db** (can be anything!)
    2. Connection
-      1. Host name/address: **data-db** (corresponds to service name)
+      1. Host name/address: **source-data-db** (corresponds to service name)
       2. Port: **5432** (default PostgreSQL port)
-      3. Username: **data_user** (from environment variables)
-      4. Password: **data_password** (from environment variables)
+      3. Username: **user** (from environment variables)
+      4. Password: **password** (from environment variables)
 
 4. Stop the workspace
     ```shell
