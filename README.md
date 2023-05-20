@@ -21,6 +21,11 @@ docker-compose up -d
 # Metabase: http://localhost:3000/
 ```
 
+If you wish to setup the stack with a template table, execute this line instead:
+```shell
+docker-compose -f docker-compose.yaml -f docker-compose.initdb.yaml up -d
+```
+
 To shut the stack down:
 ```shell
 docker-compose down

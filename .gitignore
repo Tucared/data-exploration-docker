@@ -3,3 +3,8 @@
 
 # Databases
 databases/
+
+# Database setup
+docker-compose*.yaml
+source-data/
+!docker-compose.initdb.yaml
