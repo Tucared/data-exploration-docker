@@ -2,7 +2,7 @@ version: '3'
 
 services:
   source-data-db:
-    image: postgres:latest
+    image: "postgres:${POSTGRES_VERSION_TAG}"
     environment:
       - POSTGRES_DB=source-data-db
       - POSTGRES_USER=user
@@ -11,7 +11,7 @@ services:
       - ./databases/source-data-db:/var/lib/postgresql/data
 
   metabase-app-db:
-    image: postgres:latest
+    image: "postgres:${POSTGRES_VERSION_TAG}"
     restart: always
     ports:
       - 5432:5432
@@ -23,7 +23,7 @@ services:
       - ./databases/metabase-app-db:/var/lib/postgresql/data
 
   metabase-app:
-    image: metabase-arm:latest
+    image: "metabase:${METABASE_VERSION_TAG}"
     restart: always
     environment:
       - MB_DB_TYPE=postgres
@@ -40,7 +40,7 @@ services:
       - "3000:3000"
 
   pgadmin-app:
-    image: dpage/pgadmin4:latest
+    image: "dpage/pgadmin4:${PGADMIN_VERSION_TAG}"
     restart: always
     environment:
       - PGADMIN_DEFAULT_EMAIL=admin@pgadmin.com
