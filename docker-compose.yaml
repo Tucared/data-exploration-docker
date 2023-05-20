@@ -5,7 +5,7 @@ services:
     image: "postgres:${POSTGRES_VERSION_TAG}"
     restart: always
     ports:
-      - 5400:5432
+      - 5432:5432
     environment:
       - POSTGRES_DB=source-data-db
       - POSTGRES_USER=user
@@ -17,7 +17,7 @@ services:
     image: "postgres:${POSTGRES_VERSION_TAG}"
     restart: always
     ports:
-      - 5432:5432
+      - 5400:5432
     environment:
       - POSTGRES_DB=metabase-app-db
       - POSTGRES_USER=metabase
@@ -31,7 +31,7 @@ services:
     environment:
       - MB_DB_TYPE=postgres
       - MB_DB_DBNAME=metabase-app-db
-      - MB_DB_PORT=5432
+      - MB_DB_PORT=5400
       - MB_DB_USER=metabase
       - MB_DB_PASS=password
       - MB_DB_HOST=metabase-app-db

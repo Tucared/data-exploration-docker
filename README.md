@@ -72,6 +72,6 @@ In order to administrate and perform data exploration on our source database, pg
 
 To connect to database from your machine using `psql` (needs to be installed), not from the container, use following command:
 ```shell
-psql -h localhost -p 5400 -U user -d source-data-db -W
+psql -h localhost -p 5432 -U user -d source-data-db -W
 # Type in 'password' as password
 ```
