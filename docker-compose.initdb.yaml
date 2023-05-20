@@ -1,6 +1,0 @@
-version: '3'
-
-services:
-  source-data-db:
-    volumes:
-      - ./source-data-sample:/docker-entrypoint-initdb.d

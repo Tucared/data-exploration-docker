@@ -23,7 +23,8 @@ docker-compose up -d
 
 If you wish to setup the stack with a template table, execute this line instead:
 ```shell
-docker-compose -f docker-compose.yaml -f docker-compose.initdb.yaml up -d
+docker-compose -f docker-compose.yaml -f dataset-sample/docker-compose.initdb.yaml up -d
+# "docker-compose up -d" will work afterwards as the database has been initialised
 ```
 
 To shut the stack down:
