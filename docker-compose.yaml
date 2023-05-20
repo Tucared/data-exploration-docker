@@ -31,7 +31,7 @@ services:
     environment:
       - MB_DB_TYPE=postgres
       - MB_DB_DBNAME=metabase-app-db
-      - MB_DB_PORT=5400
+      - MB_DB_PORT=5432
       - MB_DB_USER=metabase
       - MB_DB_PASS=password
       - MB_DB_HOST=metabase-app-db
