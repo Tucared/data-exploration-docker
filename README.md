@@ -1,13 +1,13 @@
 # data-exploration-docker
 
-This repository is intended for a quick launch of a lightweight dockerised data exploration stack, comprising:
+The purpose of this repository is to provide a convenient setup for a lightweight data exploration stack using Docker. The stack includes the following components:
 
-- PostgreSQL database, for storing source data to analyse
-- PostgreSQL database, as Metabase application database
-- Metabase app, for data visualisation
-- pgAdmin app, for database administration
+- PostgreSQL database: Used for storing the data to be analysed.
+- PostgreSQL database: Serves as the application database for Metabase.
+- Metabase app: Enables data visualization and exploration.
+- pgAdmin4 app: Facilitates database administration.
 
-> Databases are persistent on machine, meaning stopping and running the stack again will preserve its data and dashboards.
+> It's important to note that the databases are persistent on the machine. This means that stopping and restarting the stack will preserve the data and dashboards.
 
 ## Quick start
 
