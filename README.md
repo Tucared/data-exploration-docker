@@ -52,7 +52,7 @@ Metabase currently does not offer an official ARM docker image, hence to run thi
 
 </details>
 
-## Connecting pgAdmin and Metabase to source database
+## Connecting to source database using pgAdmin and Metabase
 
 In order to administrate and perform data exploration on our source database, pgAdmin and Metabase need to connect to it.
 
@@ -65,3 +65,10 @@ In order to administrate and perform data exploration on our source database, pg
 | *(Not applicable)* | Database name | source-data-db |                |
 | Username           | Username      | user           |                |
 | Password           | Password      | password       |                |
+
+## Connecting to source database using `psql` CLI
+
+To connect to database from your machine, not from the container, use following command
+```shell
+make psql-connect-source-db
+```
