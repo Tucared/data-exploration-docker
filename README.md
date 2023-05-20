@@ -70,7 +70,7 @@ In order to administrate and perform data exploration on our source database, pg
 
 ### Using `psql` CLI
 
-To connect to database from your machine, not from the container, use following command
+To connect to database from your machine using `psql` (needs to be installed), not from the container, use following command:
 ```shell
 make psql-connect-source-db
 ```
