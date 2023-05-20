@@ -23,7 +23,7 @@ services:
       - ./databases/metabase-app-db:/var/lib/postgresql/data
 
   metabase-app:
-    image: "metabase:${METABASE_VERSION_TAG}"
+    image: "metabase/metabase:${METABASE_VERSION_TAG}"
     restart: always
     environment:
       - MB_DB_TYPE=postgres
