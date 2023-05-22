@@ -1,7 +1,5 @@
 # User variables and source datasets
 .env
-/dataset*
-!dataset-sample/*
 
 # Docker-created databases
 databases/
