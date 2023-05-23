@@ -1,13 +1,26 @@
-CREATE TABLE pollution_data (
-    location varchar(255),
-    indicator varchar(255),
-    subject varchar(255),
-    measure varchar(255),
-    frequency varchar(1),
-    year integer,
-    value numeric,
-    flag_codes varchar(255)
+-- Create table
+CREATE TABLE AirbnbListings (
+    City VARCHAR(255),
+    Price FLOAT,
+    Day VARCHAR(255),
+    Room_Type VARCHAR(255),
+    Shared_Room BOOLEAN,
+    Private_Room BOOLEAN,
+    Person_Capacity FLOAT,
+    Superhost BOOLEAN,
+    Multiple_Rooms INTEGER,
+    Business INTEGER,
+    Cleanliness_Rating FLOAT,
+    Guest_Satisfaction FLOAT,
+    Bedrooms INTEGER,
+    City_Center_km FLOAT,
+    Metro_Distance_km FLOAT,
+    Attraction_Index FLOAT,
+    Normalised_Attraction_Index FLOAT,
+    Restaurant_Index FLOAT,
+    Normalised_Restaurant_Index FLOAT
 );
 
-COPY pollution_data(location, indicator, subject, measure, frequency, year, value, flag_codes)
-FROM '/docker-entrypoint-initdb.d/data/oecd_air_pollution_exposure.csv' DELIMITER ',' CSV HEADER;
+-- Copy values
+COPY AirbnbListings (City, Price, Day, Room_Type, Shared_Room, Private_Room, Person_Capacity, Superhost, Multiple_Rooms, Business, Cleanliness_Rating, Guest_Satisfaction, Bedrooms, City_Center_km, Metro_Distance_km, Attraction_Index, Normalised_Attraction_Index, Restaurant_Index, Normalised_Restaurant_Index)
+FROM '/docker-entrypoint-initdb.d/data/AirbnbListings.csv' DELIMITER ',' CSV HEADER;
